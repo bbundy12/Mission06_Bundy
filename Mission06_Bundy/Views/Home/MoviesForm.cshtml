@@ -8,7 +8,7 @@
     <input asp-for="Title" required />
     <br />
     <label asp-for="CategoryId">Category:</label>
-    <select asp-for="CategoryId" required>
+    <select asp-for="CategoryId">
         <option value="">Select a Category</option>
         @foreach (Category c in ViewBag.Categories)
         {
