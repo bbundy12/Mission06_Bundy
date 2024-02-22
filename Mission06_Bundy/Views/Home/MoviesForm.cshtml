@@ -2,12 +2,13 @@
 
 <h1>Movie Record Submission</h1>
 <form method="post">
-    <input asp-for="MovieID" hidden />
+    <input asp-for="MovieID" type="hidden" />
 
     <label asp-for="Title">Title:</label>
     <input asp-for="Title" required />
     <br />
-    <select asp-for="CategoryId">
+    <label asp-for="CategoryId">Category:</label>
+    <select asp-for="CategoryId" required>
         <option value="">Select a Category</option>
         @foreach (Category c in ViewBag.Categories)
         {

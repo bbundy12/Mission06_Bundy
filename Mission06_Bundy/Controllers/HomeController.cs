@@ -36,11 +36,10 @@ namespace Mission06_Bundy.Controllers
 
         [HttpPost]
         public IActionResult MoviesForm(Movie response) 
-        {
+        {             
             _context.Movies.Add(response);
             _context.SaveChanges();
-
-            return View("Confirmation", response);
+            return View("Confirmation", response);         
         }
 
         public IActionResult MovieList() 

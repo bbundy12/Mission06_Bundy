@@ -7,9 +7,11 @@ namespace Mission06_Bundy.Models
     {
         [Key]
         [Required]
+
         public int MovieID { get; set; }
 
         [ForeignKey("CategoryId")]
+        [Required(ErrorMessage = "Sorry you need to enter a first name")]
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public string Title { get; set; }
