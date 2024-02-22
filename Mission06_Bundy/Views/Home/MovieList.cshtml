@@ -1,0 +1,40 @@
+﻿@model List<Movie>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Director</th>
+                <th>Release Year</th>
+                <th>Rating</th>
+                <th>Edited</th>
+                <th>Lent To</th>
+                <th>Copied to Plex</th>
+                <th>Notes</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Category.CategoryName</td>
+                    <td>@movie.Director</td>
+                    <td>@movie.Year</td>
+                    <td>@movie.Rating</td>
+                    <td>@(movie.Edited == "1" ? "Yes" : "No")</td> @*This is an if statement that changees the output to yes or no*@
+                    <td>@movie.LentTo</td>
+                    <td>@(movie.CopiedToPlex == "1" ? "Yes" : "No")</td> @*This is an if statement that changees the output to yes or no*@
+                    <td>@movie.Notes</td>
+                    <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@movie.MovieID">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@movie.MovieID">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

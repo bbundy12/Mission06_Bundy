@@ -11,6 +11,7 @@ namespace Mission06_Bundy.Models
 
         }
 
-        public DbSet<Movie> Movies { get; set; }    
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
